@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/JS notes/Kool.css">
+    <script src="/JS notes/Kool.js"></script>
+
+    <title>Kool Kalculator</title>
+
+<style>
+
+ hr {
+      width: 50px;
+      border-color: transparent;
+      border-right-color: rgba(250, 46, 46, 0.7);
+      border-right-width: 50px;
+      position: absolute;
+      bottom: 100%;
+      transform-origin: 100% 50%;
+      animation-name: rain;
+      animation-duration: 1s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      z-index: -1;
+  }
+  
+  @keyframes rain {
+      from {
+          transform: rotate(105deg) translateX(0);
+      }
+      to {
+          transform: rotate(105deg) translateX(calc(100vh + 20px));
+      }
+  }
+
+</style>
+</head>
+
+<body>
+
+<div class="space-particles"></div>
+
+<div class="card">
+
+<label id="l1" for="num1">First number</label>    
+<input type="number" id="num1">
+
+<label id="d1" for="num2">Second number</label>
+<input type="number" id="num2">
+
+<br> <br>
+
+<button class="btn" onclick="add()">Add</button>
+<button class="btn" onclick="subtract()">Subtract</button>
+<button class="btn" onclick="multiply()">Multiply</button>
+<button class="btn" id="dbtn">Divide</button>
+
+<h1> Result: <span id="result"></span></h1>
+
+</div>
+
+<script>
+
+let hrElement;
+let counter = 100;
+
+    for (let i = 0; i < counter; i++) {
+            hrElement = document.createElement("hr");
+            hrElement.style.left = Math.floor(Math.random() * window.innerWidth) + "px";
+            hrElement.style.animationDuration = 2 + Math.random() * .2 + "s";
+            hrElement.style.animationDelay = Math.random() * 5 + "s";
+            document.body.appendChild(hrElement);
+        }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+body {
+    color: whitesmoke;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      background: rgb(245, 185, 185);
+  }
+  
+  #d1{
+      padding-left: 0px;    
+  }
+  
+  #num1{
+  color: rgb(65, 255, 18);
+  background-color:#8B00FF;
+  border: 2px rgb(12, 250, 91);
+  border-style: outset; 
+  margin-left: 22px;
+  }
+  
+  #num2{
+  color: rgb(65, 255, 18);
+  background-color:#8B00FF;
+  border: 2px rgb(12, 250, 91);
+  border-style: outset; 
+  margin-top: 10px;
+  }
+  
+  .btn{
+  color:ghostwhite;
+  background-color:#8B00FF;
+  border: 3px ghostwhite;
+  border-style: groove;
+  }
+  
+  .card{
+      margin: 0 auto;
+      padding: 2rem;
+      width: 300px;
+      background: #1c1f2b;
+      text-align: center;
+      border-radius: 10px;
+      position: relative;
+      margin-top: 13%;
+      margin-bottom: 15%;
+  }
+  
+  @property --angle{
+      syntax: "<angle>";
+      initial-value: 0deg;
+      inherits: false;
+  }
+  
+  .card::after, .card::before{
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-image: conic-gradient(from var(--angle), #FF0000 0%, #FF7F00 10%, #FFFF00 20%, #00FF00 30%, #0000FF 40%, #4B0082 50%, #8B00FF 60%, #FF0000 70%);
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      z-index: -1;
+      padding: 3px;
+      border-radius: 10px;
+      animation: 3s spin linear infinite;
+  }
+  
+  .card::before{
+      filter: blur(1.5rem);
+      opacity: 0.9;
+  }
+  
+  @keyframes spin{
+      from{
+          --angle: 0deg;
+      }
+      to{
+          --angle: 360deg;
+      }
+  }
+  
