@@ -199,11 +199,16 @@ bt.addEventListener("keydown",()=>{
         }
 
         let jsonData = {
-          {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
-  ]
-}
+    "version":2,
+    "builds": [
+      { "src": "*.js", "use": "@vercel/node" }
+    ],
+    "routes": [
+        {
+          "src": "/(.*)",
+          "dest": "/"
+        }
+    ]
         };
 
 </script>
